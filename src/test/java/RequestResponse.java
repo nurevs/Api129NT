@@ -43,6 +43,14 @@ public class RequestResponse {
         System.out.println("Server Adi "+response.header("Server"));
         System.out.println("Connection Adi "+response.header("Connection"));
 
+        //Headeres nasil yazdirilir(Hepsini yazdirir)
+        System.out.println("*****************");
+        System.out.println(response.headers());
+
+        //Time nasil yazdirilir
+        System.out.println("\nTime: "+response.getTime());
+
+
 
     }
 }
