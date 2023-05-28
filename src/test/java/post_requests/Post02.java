@@ -11,6 +11,7 @@ import test_data.HerOkuAppTestData;
     import java.util.Map;
 
     import static io.restassured.RestAssured.given;
+    import static org.junit.Assert.assertEquals;
 
 public class Post02 extends HerOkuAppBaseUrl {
         /*
@@ -66,7 +67,8 @@ public class Post02 extends HerOkuAppBaseUrl {
             Map<String,Object> actualData=response.as(HashMap.class);
             System.out.println(actualData);
 
-
+            assertEquals(200, response.statusCode());
+            assertEquals(expectedData.get("firstname"),((Map)actualData.get("booking")).get("firstname"));
         }
 
     }
