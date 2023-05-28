@@ -2,12 +2,17 @@ package post_requests;
 
 
     import base_urls.HerOkuAppBaseUrl;
-import org.junit.Test;
+    import io.restassured.http.ContentType;
+    import io.restassured.response.Response;
+    import org.junit.Test;
 import test_data.HerOkuAppTestData;
 
-import java.util.Map;
+    import java.util.HashMap;
+    import java.util.Map;
 
-    public class Post02 extends HerOkuAppBaseUrl {
+    import static io.restassured.RestAssured.given;
+
+public class Post02 extends HerOkuAppBaseUrl {
         /*
     Given
         1) https://restful-booker.herokuapp.com/booking
@@ -54,7 +59,12 @@ import java.util.Map;
             System.out.println("expectedData = " + expectedData);
 
             //Send the request and get the response
+            Response response=given(spec).contentType(ContentType.JSON).body(expectedData).post("{first}");
+            response.prettyPrint();
 
+            //Do assertion
+            Map<String,Object> actualData=response.as(HashMap.class);
+            System.out.println(actualData);
 
 
         }
