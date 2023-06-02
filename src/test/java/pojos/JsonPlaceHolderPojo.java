@@ -1,4 +1,4 @@
-package pojo_requests;
+package pojos;
 
 public class JsonPlaceHolderPojo {
     //1: private variable'lar oluşturunuz
