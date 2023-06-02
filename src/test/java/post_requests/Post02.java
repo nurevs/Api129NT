@@ -69,6 +69,9 @@ public class Post02 extends HerOkuAppBaseUrl {
 
             assertEquals(200, response.statusCode());
             assertEquals(expectedData.get("firstname"),((Map)actualData.get("booking")).get("firstname"));
+            assertEquals(expectedData.get("lastname"),((Map)actualData.get("booking")).get("lastname"));
+            assertEquals(expectedData.get("totalprice"),((Map)actualData.get("booking")).get("totalprice"));
+            assertEquals(expectedData.get("depositpaid"),((Map)actualData.get("booking")).get("depositpaid"));
         }
 
     }
